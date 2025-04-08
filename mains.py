@@ -1,6 +1,6 @@
 import pandas as pd
 
-def extract_experience_range_rules(text):
+def extract_experience(text):
     jd = text.lower().replace('-', ' to ')
     words = jd.split()
     # print(words)
@@ -68,7 +68,7 @@ test = [
 # Run tests
 results=[]
 for jd in test:
-    result = extract_experience_range_rules(jd)
+    result = extract_experience(jd)
     results.append({"JD Phrase Example":jd, "Normalized Range":result})
     # print(f"JD: {jd}\nNormalized Experience: {result}\n")
 
