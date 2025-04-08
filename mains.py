@@ -19,9 +19,16 @@ def extract_experience(text):
         if (word == "maximum" and i + 2 < len(words)) or (word=='maximum' and i+1<len(words)) :
             if words[i + 1] == "of" and words[i + 2].isdigit():
                 x = int(words[i + 2])
+                if x==1:
+                    return f"{max(0, x - 2)} - {x} year"
+                    
                 return f"{max(0, x - 2)} - {x} years"
+                
             elif words[i+1].isdigit():
                 x=int(words[i+1])
+                if x == 1:
+                    return f"{max(0, x - 2)} - {x} year"
+                    
                 return f"{max(0, x - 2)} - {x} years"
 
         # Case: "at least X years"
@@ -31,7 +38,10 @@ def extract_experience(text):
 
         # Case: "X to Y years"
         if word == "to" and i > 0 and i < len(words) - 1:
-            if words[i - 1].isdigit() and words[i + 1].isdigit():
+            if words[i - 1].isdigit()  and words[i + 1].isdigit():
+                if words[i-1]=="0" and words[i+1]=="1":
+                    return f"{words[i - 1]} - {words[i + 1]} year"
+
                 return f"{words[i - 1]} - {words[i + 1]} years"
 
         # Case: "X+ years" or "X years"
@@ -57,6 +67,9 @@ test = [
     "5+ year's of professional/industrial experience in software development.",
     "3+ yrs industry hands-on professional experience in Frontend software development.",
     "2 to 4 years of technical experience with WebSphere Transformation Extender (WTX)",
+    "0 to 1 year of technical experience with WebSphere Transformation Extender (WTX)",
+    "0 to 3 years of technical experience with WebSphere Transformation Extender (WTX)",
+    "Maximum of 1 year experience in frontend development.",
     "Experience 2-4 years",
     "Have expertise in Object-oriented design principles using any modern language preferably Java.Bachelor of Technology / Engineering in Computer Science or a related technical discipline with 2 to 4 years of relevant experience",
     "Minimum 1+ years of experience in Golang development.",
