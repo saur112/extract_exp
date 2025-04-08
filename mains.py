@@ -54,6 +54,7 @@ test = [
     "Candidates should have at least 5 yrs of relevant experience.",
     "At least 8 years of experience in software development",
     "5+ years of professional/industrial experience in software development.",
+    "5+ year's of professional/industrial experience in software development.",
     "3+ yrs industry hands-on professional experience in Frontend software development.",
     "2 to 4 years of technical experience with WebSphere Transformation Extender (WTX)",
     "Experience 2-4 years",
