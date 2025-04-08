@@ -83,7 +83,7 @@ test = [
 results=[]
 for jd in test:
     result = extract_experience(jd)
-    results.append({"JD Phrase Example":jd, "Normalized Range":result})
+    results.append({"Job Description":jd, "Extracted Experience":result})
     # print(f"JD: {jd}\nNormalized Experience: {result}\n")
 
 df = pd.DataFrame(results)
